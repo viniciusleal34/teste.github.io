@@ -14,15 +14,6 @@
       )
       .withButton({ color: "#2CC3D5", icon: "" })
       .withCustomCommonUrl("https://chat.blip.ai/")
-      .withEventHandler(BlipChat.LOAD_EVENT, function () {
-        blipClient.sendMessage({
-          type: "text/plain",
-          content: "Start",
-          metadata: {
-            "#blip.hiddenMessage": true,
-          },
-        });
-      })
       .build();
     
     setTimeout(() => {
