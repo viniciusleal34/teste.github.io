@@ -10,12 +10,20 @@
     var blipClient = new BlipChat();
     blipClient
       .withAppKey(
-        'c3VjaHdvd3BldHMzNTplN2MyZWM0Ni00MWVjLTQzZmYtODQ1MC0yMjg2ZGQ2MDU4YTY='
+     "c3VjaHdvd3BldHMzNTplN2MyZWM0Ni00MWVjLTQzZmYtODQ1MC0yMjg2ZGQ2MDU4YTY="
       )
       .withButton({ color: "#2CC3D5", icon: "" })
       .withCustomCommonUrl("https://chat.blip.ai/")
+     .withAccount({
+              fullName: 'John Doe',
+              email:'johndoe@gmail.com',
+              phoneNumber: '+15055034455',
+              city: 'Decatur',
+              extras: {
+                  url: "VALOR-DA-URL-CAPTURADO"
+              }
+          })
       .withEventHandler(BlipChat.LOAD_EVENT, function () {
-        //Envia uma mensagem que o usuario não consegue ver
         blipClient.sendMessage({
           type: "text/plain",
           content: "Start",
@@ -25,12 +33,6 @@
         });
       })
       .build();
-    
-    setTimeout(() => {
-      // Abrindo chat ao entra no site
-      blipClient.toogleChat();
-    }, 1000);
-    
   };
 })();
 </script>
