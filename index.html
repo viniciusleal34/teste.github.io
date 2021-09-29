@@ -14,7 +14,6 @@
       )
       .withButton({ color: "#2CC3D5", icon: "" })
       .withCustomCommonUrl("https://chat.blip.ai/")
-      .withCustomMessageMetadata({ "aaa" : "browser" });
       .withEventHandler(BlipChat.LOAD_EVENT, function () {
         blipClient.sendMessage({
           type: "text/plain",
